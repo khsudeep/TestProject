@@ -1,0 +1,41 @@
+
+
+                                                 ________________
+                                                |                |
+                                                |    CODE        |
+                                                |________________|
+                                                |                |
+                                                |    DATA        |
+                                                |________________|
+                                                |                |
+                                                |    HEAP        |
+                                                |                |
+                                                |     ||         |
+                                                |     ||         |
+                                                |     \/         |
+                                                |                |
+                                                |     /\         |
+                                                |     ||         |
+                                                |     ||         |
+                                                |                |
+                                                |    STACK       |
+                                                |________________|
+                                                |                |
+                                                |   UNMAPPED     |
+                                                |________________|
+
+                Process Address Space diagram: It is allocated by OS.
+
+Code: This Segment contains machine code(form of executable instructions) of the compiled program. Read only
+      and cannot be changed when the program is running.
+      May be sharable so that only a copy is in memory for different executing programs.
+
+Data: It has all global and static data variables. Memory is allocated in this area when the program is loading(before main function is called).
+      That's why global and static variables area also called load variables. All load-time variables are initialized at the load-time. If no initial value
+      is given for a load-time variable then it is initialized with the zero of its type.
+      Initially it is divided into 2 areas initialized and uninitialized. If initial value is given it goes into initialized data area else in the other.
+      All uninitialized are then initialized with zeros. The reason for separating is because the uninitialized data area can be "memset" to zero in single operation.
+      Size of this segment is fixed at load time and does not change when program is executing.
+
+Stack: It contains Activation records(also called Stack Frames) of all the active functions. An active function is a function that is currently under the call.
+

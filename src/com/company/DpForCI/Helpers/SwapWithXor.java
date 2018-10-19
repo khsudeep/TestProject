@@ -1,4 +1,4 @@
-package com.company.DpForCI.Chapter1.Helpers;
+package com.company.DpForCI.Helpers;
 
 public class SwapWithXor{
 
